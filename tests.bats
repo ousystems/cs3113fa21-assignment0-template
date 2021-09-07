@@ -17,12 +17,12 @@ diff_files()
 
 @test "compiletest" {
 	make all
-	run which boomerSooner
+	run which a0
 	[ "$status" -eq 0 ]
 }
 
 @test "test1" {
-	boomerSooner < tests/input.txt > testOutput1.txt
+	a0 < tests/input.txt > testOutput1.txt
 	run diff_files testOutput1.txt tests/output.txt
 	echo $output
 	[ "$status" -eq 0 ]
@@ -31,6 +31,6 @@ diff_files()
 
 @test "testclean" {
 	make clean
-	run which boomerSooner
+	run which a0
 	[ "$status" -ne 0 ]
 }
